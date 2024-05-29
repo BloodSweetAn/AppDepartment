@@ -19,7 +19,7 @@ export class DepartmentService {
     return this.http.get<Department[]> (this.url + "/departments");
   }
 
-  listId(id:number){
+  listId(id: number){
     return this.http.get<Department>(this.url+"/department/"+ id);
   }
 
@@ -31,11 +31,11 @@ export class DepartmentService {
     return this.http.put(this.url + "/department", iddepa);
   }
 
-  delete(id:string){
+  delete(id: string){
     return this.http.delete(this.url + "/department/" + id);
   }
 
-  setList(listaNueva : Department[]){
+  setList(listaNueva: Department[]){
   this.listaCambio.next(listaNueva);
   }
   
