@@ -21,18 +21,18 @@ export class CreateEditComponent implements OnInit{
   ngOnInit(): void {
     this.form = new FormGroup(
       {
-        gcId: new FormControl('', [Validators.required]),
+        gcId: new FormControl('', [Validators.required , Validators.pattern('^[0-9]+$')]),
         gcDescription: new FormControl('', [Validators.required , Validators.minLength(5)]),
         gcAuthorities: new FormControl('', [Validators.required]),
-        gcNroOfficers: new FormControl('', [Validators.required]),
-        gcOperative: new FormControl('', [Validators.required ])
+        gcNroOfficers: new FormControl('', [Validators.required, Validators.pattern('^[0-9]+$')]),
+        gcOperative: new FormControl('', [Validators.required])
       }
       
     );
     
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id']; //capturando el id del listado
-      this.edicion = data['id'] != null;
+      this.id = data['gcId']; //capturando el id del listado
+      this.edicion = data['gcId'] != null;
       this.init();
     });
     

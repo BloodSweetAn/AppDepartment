@@ -32,7 +32,6 @@ export class DepartmentListComponent {
     //this.authorService.list().subscribe(data=> this.dataSource = new MatTableDataSource(data));
   }
 
-  
   openDialog(gcId:string){
     const dialogRef = this.dialog.open(DialogoComponent);
     dialogRef.afterClosed().subscribe(result =>{
@@ -43,6 +42,7 @@ export class DepartmentListComponent {
       }
     });
   }
+
   delete(gcId:string){
     this.departmentService.delete(gcId).subscribe(()=>{
       this.departmentService.list().subscribe(data=>{
@@ -50,11 +50,15 @@ export class DepartmentListComponent {
       })
     });
   }
+
   ngAfterViewInit(){
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
- filtrar(e:any){
-   this.dataSource.filter = e.target.value.trim();
- }
+
+  /*
+  filtrar(e:any){
+    this.dataSource.filter = e.target.value.trim();
+  }
+  */
 }

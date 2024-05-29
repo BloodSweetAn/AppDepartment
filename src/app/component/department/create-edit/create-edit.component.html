@@ -1,34 +1,41 @@
-<div class="form-body">
-    <form [formGroup]="form" (submit)="aceptar()">
-        <mat-form-field class="example-full-width">
-            <mat-label>Código</mat-label>
-            <input matInput placeholder="Código" formControlName="gcId">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <mat-label>Description</mat-label>
-            <input matInput placeholder="Description" formControlName="gcDescription">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <mat-label>Authorities</mat-label>
-            <input matInput placeholder="Authorities" formControlName="gcAuthorities">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <mat-label>NroOfficers</mat-label>
-            <input matInput placeholder="NroOfficers" formControlName="gcNroOfficers">
-        </mat-form-field>
-        <br>
-        <mat-form-field>
-            <mat-label>Operative</mat-label>
-            <input matInput placeholder="Operative" formControlName="gcOperative">
-        </mat-form-field>
-        <br>
-        <div class="button-sub-form">
-            <button mat-raised-button type="submit" color="primary">Aceptar</button>
-            <button mat-raised-button color="warn" routerLink="/authors">Cancelar</button>
-        </div>
-        <p>{{mensaje}}</p>
-    </form>
-</div>
+<body>
+    <div class="form-body">
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field class="example-full-width">
+                <mat-label>Código</mat-label>
+                <input matInput placeholder="Código" formControlName="gcId">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Description</mat-label>
+                <input matInput placeholder="Description" formControlName="gcDescription">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Authorities</mat-label>
+                <input matInput placeholder="Authorities" formControlName="gcAuthorities">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>NroOfficers</mat-label>
+                <input type="number" matInput placeholder="NroOfficers" formControlName="gcNroOfficers">
+            </mat-form-field>
+            <br>
+    
+            <mat-form-field>
+                <mat-label>Operative</mat-label>
+                <mat-select formControlName="gcOperative" placeholder="Operative" >
+                    <mat-option value="true">True</mat-option>
+                    <mat-option value="false">False</mat-option>
+                </mat-select>
+              </mat-form-field>
+    
+            <br>
+            <div class="button-sub-form">
+                <button mat-raised-button type="submit" color="primary">Aceptar</button>
+                <button mat-raised-button color="warn" routerLink="/departments">Cancelar</button>
+            </div>
+            <p>{{mensaje}}</p>
+        </form>
+    </div>
+</body>
