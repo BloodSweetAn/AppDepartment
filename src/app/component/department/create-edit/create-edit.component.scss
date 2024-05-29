@@ -1,0 +1,14 @@
+.form-body {
+    form{
+        width: 15rem;
+        margin: auto;
+    }
+    mat-form-field{
+        display: flex;
+        justify-content: center;
+    }
+    .button-sub-form{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
